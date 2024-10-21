@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Pemrograman Web</title>
+    <style>
+        body {
+            background-image: url("images/windows-11-windows-365-blocks-3d-background-blue-background-4416x2484-8630.jpg");
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        form, table {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+        }
+
+        fieldset {
+            border: none;
+        }
+
+        legend {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        p, h1, h3, label {
+            margin: 10px 0;
+        }
+
+        input[type="text"], input[type="password"], select {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="button"], input[type="reset"] {
+            padding: 10px 20px;
+            margin: 10px 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="button"] {
+            background-color: #007bff;
+            color: white;
+        }
+
+        input[type="reset"] {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        table {
+            width: 80%;
+            max-width: 600px;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+            border-radius: 50%;
+        }
+
+        .links p {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .form-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-section">
+        <p>
+            <img src="images/20200104_184855.jpg" width="150" height="150"> 
+        </p>
+        <h1>ZikuriAri</h1>
+        <script>
+            function submitForm() {
+                // Ambil nilai dari input
+                var namaDepan = document.getElementById("namaDepan").value;
+                var namaBelakang = document.getElementById("namaBelakang").value;
+                var jenisKelamin = document.getElementById("jenisKelaminSelect").value;
+                var statusKeanggotaan = document.querySelector('input[name="keanggotaan"]:checked').value;
+
+                // Simpan ke localStorage
+                localStorage.setItem("namaDepan", namaDepan);
+                localStorage.setItem("namaBelakang", namaBelakang);
+                localStorage.setItem("jenisKelamin", jenisKelamin);
+                localStorage.setItem("statusKeanggotaan", statusKeanggotaan);
+
+                // Redirect ke halaman kedua
+                window.location.href = "linktabel/halaman2.html";
+            }
+        </script>
+        
+        <form id="formData">
+            <fieldset>
+                <legend><b>Join us Tarnished</b></legend>
+                <p>
+                    <label>Nama Depan</label>
+                    <input type="text" id="namaDepan" placeholder="Nama depan..." />
+                </p>
+                <p>
+                    <label>Nama Belakang</label>
+                    <input type="text" id="namaBelakang" placeholder="Nama belakang..." />
+                </p>
+                <p>
+                    <label>Password</label>
+                    <input type="password" id="password" placeholder="..........." />
+                </p>
+                <p>
+                    <label>Jenis Kelamin</label>
+                    <select id="jenisKelaminSelect">
+                        <option value="Belum Memilih">Belum Memilih</option>
+                        <option value="LAKI-LAKI">Laki-laki</option>
+                        <option value="PEREMPUAN">Perempuan</option>
+                    </select>
+                </p>
+                <p>
+                    <label>Status Keanggotaan:</label><br>
+                    <input type="radio" id="anggotaBaru" name="keanggotaan" value="Baru">
+                    <label for="anggotaBaru">Anggota Baru</label>
+                    <input type="radio" id="anggotaLama" name="keanggotaan" value="Lama">
+                    <label for="anggotaLama">Anggota Lama</label>
+                </p>
+                <p>
+                    <input type="button" value="SUBMIT" onclick="submitForm()" />
+                    <input type="reset" value="BATAL">
+                </p>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>

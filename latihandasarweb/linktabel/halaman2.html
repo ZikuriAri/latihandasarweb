@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman 2 - Data Biodata</title>
+    <style>
+        body {
+            background-image: url("../images/windows-11-windows-365-blocks-3d-background-blue-background-4416x2484-8630.jpg");
+            background-size: cover;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        table {
+            width: 80%;
+            max-width: 600px;
+            border-collapse: collapse;
+            margin: 50px auto;
+            background-color: rgba(255, 255, 255, 0.8);
+            color: black;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        caption {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #ffd700;
+        }
+
+        a {
+            color: #ffd700;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <table border="3">
+        <caption><b>Informasi Biodata</b></caption>
+        <thead>
+            <tr>
+                <th>Nama Depan</th>
+                <th>Nama Belakang</th>
+                <th>Jenis Kelamin</th>
+                <th>Anggota Baru</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="namaDepan"></td>
+                <td id="namaBelakang"></td>
+                <td id="jenisKelamin"></td>
+                <td id="statusKeanggotaan"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p> <a href="../index.html">Menuju Halaman Satu.</a> Klik Maka Akan Pindah Halaman</p>
+    <p> <a href="https://sttbandung.ac.id">Menuju Halaman STT Bandung.</a> Klik Maka Akan Pindah Halaman</p>
+
+    <script>
+        // Retrieve data from localStorage
+        var namaDepan = localStorage.getItem("namaDepan");
+        var namaBelakang = localStorage.getItem("namaBelakang");
+        var jenisKelamin = localStorage.getItem("jenisKelamin");
+        var statusKeanggotaan = localStorage.getItem("statusKeanggotaan");
+
+
+        // Display data in the table
+        document.getElementById("namaDepan").textContent = namaDepan;
+        document.getElementById("namaBelakang").textContent = namaBelakang;
+        document.getElementById("jenisKelamin").textContent = jenisKelamin;
+        document.getElementById("statusKeanggotaan").textContent = statusKeanggotaan;
+
+    </script>
+</body>
+</html>
